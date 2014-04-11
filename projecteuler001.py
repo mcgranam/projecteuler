@@ -2,7 +2,7 @@
 
 # File name: 		projecteuler001.py
 # Author: 			Matt McGranaghan
-# Date Created: 	2014/04/11
+# Date Created:		2014/04/11
 # Date Modified: 	2014/04/11
 # Python Version: 	2.7
 
