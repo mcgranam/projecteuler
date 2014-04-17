@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # File name: 		projecteuler006.py
-# Author: 			Matt McGranaghan
+# Author: 		Matt McGranaghan
 # Date Created:		2014/04/17
 # Date Modified: 	2014/04/17
 # Python Version: 	2.7
