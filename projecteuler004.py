@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
-# File name: 		projecteuler003.py
+# File name: 		projecteuler004.py
 # Author: 			Matt McGranaghan
-# Date Created:		2014/04/11
-# Date Modified: 	2014/04/11
+# Date Created:		2014/04/16
+# Date Modified: 	2014/04/16
 # Python Version: 	2.7
 
 # A palindromic number reads the same both ways. The largest palindrome made
