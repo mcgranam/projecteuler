@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# File name: 		projecteuler003.py
+# File name: 		projecteuler015.py
 # Author: 			Matt McGranaghan
 # Date Created:		2014/04/25
 # Date Modified: 	2014/04/25
