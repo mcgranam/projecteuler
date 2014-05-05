@@ -17,20 +17,20 @@
 
 # Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
 
-def to_the_fifth(x):
-	return x**5
-
 def solution030():
 	target = 5*9**5
 	sum_all = 0
 
 	for i in range(2,target+1):
-		lst_i = list(str(i))
-		int_i = map(int, lst_i)
-		sum_fifth = sum(map(to_the_fifth,int_i))
+		sum_fifth = 0
+		d = i
+		while d > 0:
+			sum_fifth += (d%10)**5
+			d /= 10
 		if i == sum_fifth:
 			sum_all += i
 
 	return sum_all
+
 
 print solution030()
