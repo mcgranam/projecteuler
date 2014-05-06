@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python
 
 # File name: 		projecteuler031.py
