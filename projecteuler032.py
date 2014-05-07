@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # File name: 		projecteuler032.py
-# Author: 			Matt McGranaghan
+# Author: 		Matt McGranaghan
 # Date Created:		2014/05/07
 # Date Modified: 	2014/05/07
 # Python Version: 	2.7
@@ -29,7 +29,7 @@ def solution032():
 		if mcand * mplier == prod:
 			prod_list.append(prod)
 
-		#1 x 4 = 4 type
+		# 1 x 4 = 4 type
 		mcand  = p/10**8
 		mplier = (p%10**8)/10**4
 		prod   = p%10**4
