@@ -24,4 +24,4 @@ def primes_sieve(limit):
 prime_10001 = primes_sieve(200000)
 
 print prime_10001[10000]
-
+ 
