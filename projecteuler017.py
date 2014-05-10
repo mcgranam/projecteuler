@@ -60,5 +60,6 @@ def solution017():
 
 	return letter_count
 
-print solution017()
+print solution017() 
+
 
