@@ -28,3 +28,4 @@ def solution004():
 	return max_palindrome
 
 print solution004()
+ 
