@@ -37,3 +37,4 @@ def solution005():
 	return reduce(lambda x, y: x*y, prime_factors)
 
 print solution005()
+ 
