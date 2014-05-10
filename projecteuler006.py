@@ -28,3 +28,4 @@ def solution006():
 	return diff
 
 print solution006()
+ 
