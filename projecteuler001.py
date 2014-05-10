@@ -26,3 +26,4 @@ def solution001():
 	return sum_multiples
 
 print solution001()
+ 
