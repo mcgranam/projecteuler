@@ -30,3 +30,4 @@ for x in range(size):
 
 for i in matrix:
 	print i
+	
