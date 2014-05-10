@@ -24,3 +24,4 @@ def solution010():
 
 print solution010()
 
+ 
