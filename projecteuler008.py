@@ -44,3 +44,4 @@ def solution008():
 	return max_product
 
 print solution008()
+ 
