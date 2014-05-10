@@ -32,3 +32,4 @@ def solution002():
 	return sum_even
 
 print solution002()
+ 
