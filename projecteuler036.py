@@ -5,7 +5,7 @@
 # Date Created:		2014/05/09
 # Date Modified: 	2014/05/09
 # Python Version: 	2.7
-
+import time
 def palendrome(n):
 	mag = len(str(n))
 	k = n
@@ -28,4 +28,3 @@ for i in range(1,target+1,2):
 		sum_palendromes += base10
 
 print sum_palendromes
-
