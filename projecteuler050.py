@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+
+# File name: 		projecteuler050.py
+# Author: 			Matt McGranaghan
+# Date Created:		2014/05/20
+# Date Modified: 	2014/05/20
+# Python Version: 	2.7
+
 def primes(target):
 	prime_numbers = range(1,target+1)
 	for p in range(2,target):
@@ -11,20 +19,28 @@ def primes(target):
 	return prime_numbers
 
 def solution050():
-	prime_list = primes(100)
+	prime_list = primes(1000000)
 	prime_numbers = filter(None,prime_list)
+
 	max_sum = 0
-	for i in range(len(prime_numbers)):
-		max_sum_i = 0
-		for j in range(i+1,len(prime_numbers)):
-			print i,j
-			if max_sum_i + prime_numbers[j] > prime_numbers[-1]:
+	max_l = 1
+	for i in range(len(prime_numbers)-1):
+		l = 1
+		j = i+l
+		sum_i_j = prime_numbers[i]
+		while (sum_i_j + prime_numbers[j]) < prime_numbers[-1]:
+			sum_i_j += prime_numbers[j]
+			if sum_i_j == prime_list[sum_i_j]:
+				if l > max_l:
+					max_l = l + 1 # count base element
+					max_sum = sum_i_j
+			if j < len(prime_numbers):
+				l += 1
+				j  = i+l
+			else:
 				break
-			max_sum_i += j
-			if max_sum_i == prime_list[max_sum_i]:
-				if max_sum_i > max_sum:
-					max_sum = max_sum_i
-	return max_sum
+
+	return max_l, max_sum
 
 print solution050()
 
