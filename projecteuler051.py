@@ -35,53 +35,49 @@ def replaceable_digits(n):
 def new_primes(prime_list,i_list):
 	new_primes_list = []
 	i_list.reverse()
+	i_list[:] = [x - 1 for x in i_list]
 	for p in prime_list:
-		p = list(str(p))
-		for i in i_list:
-			del p[i]
-		new_primes_list.append(p)
+		flag = True
+		d = (p/(10**i_list[-1]))%10
+		for i in i_list[0:-1]:
+			d2 = (p/(10**i_list[-1]))%10
+			if d2 != d:
+				flag = False
+				break		
+		if flag == True:
+			q = map(int, str(p))  
+			q = ["x" if x == d else x for x in q]
+			new_primes_list.append(q)
 	return new_primes_list
 
-prime_list = primes(100000)
-prime_numbers = []
-for p in prime_list:
-	if (p != None) and (p > 10000):
-		prime_numbers.append(p)
-replace_list = replaceable_digits(5)
-for r in replace_list:
-	print r
-	new_p_list = new_primes(prime_numbers,r)
-	for n in new_p_list:
-		if new_p_list.count(n) == 7:
-			print n,r
-			break
+def solution051():
+	prime_list = primes(100000)
+	prime_numbers = []
+	for p in prime_list:
+		if (p != None) and (p > 10000):
+			prime_numbers.append(p)
+	replace_list = replaceable_digits(5)
+	replace_list.sort(lambda x,y: cmp(len(x), len(y)))
+
+	for r in replace_list:
+		print r
+		new_p_list = new_primes(prime_numbers,r)
+		for n in new_p_list:
+			if new_p_list.count(n) >= 7:
+				return n,r
+
+print solution051()
 
 
-
-
-
-
-# prime_numbers = []
-# for p in prime_list:
-# 	if p != None and len(str(p)) > 4:
-# 		x = list(str(p))
-# 		prime_numbers.append(x)
-
-# replace_list = replaceable_digits(5)
-# replace_list.sort(lambda x,y: cmp(len(x), len(y)))
-
-# for r_list in replace_list:
-# 	p_list = copy.deepcopy(prime_numbers)
-# 	for p in p_list:
-# 		r_list.reverse()
-# 		for r in r_list:
-# 			print r
-# 			del p[r]
-
-
-
-
-
-# for each replacement possibility, go through the original prime list and delete those digits.
-# then look through what is left of the primes and see if there is 8 of any. 
-
+# def new_primes(prime_list,i_list):
+# 	new_primes_list = []
+# 	i_list.reverse()
+# 	for p in prime_list:
+# 		p = list(str(p))
+# 		deleted = []
+# 		for i in i_list:
+# 			d = p.pop(i-1)
+# 			deleted.append(d)
+# 		if len(set(deleted)) == 1:
+# 			new_primes_list.append(p)
+# 	return new_primes_list
