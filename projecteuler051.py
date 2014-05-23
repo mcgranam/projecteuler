@@ -45,9 +45,11 @@ def new_primes(prime_list,i_list):
 				flag = False
 				break		
 		if flag == True:
-			q = map(int, str(p))  
-			q = ["x" if x == d else x for x in q]
-			new_primes_list.append(q)
+			p = map(int,str(p))
+	 		for i in i_list:
+				d = p.pop(i-1)
+			new_primes_list.append(p)
+
 	return new_primes_list
 
 def solution051():
