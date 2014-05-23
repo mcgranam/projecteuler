@@ -28,58 +28,39 @@ def replaceable_digits(n):
 			for i in p:
 				if int(i) > c[-1]:
 					c.append(int(i))
-			if c not in replace_list:
+			if (c not in replace_list) and (len(c) > 1):
 				replace_list.append(c)
 	return replace_list
 
 def new_primes(prime_list,i_list):
 	new_primes_list = []
 	i_list.reverse()
-	i_list[:] = [x - 1 for x in i_list]
 	for p in prime_list:
-		flag = True
-		d = (p/(10**i_list[-1]))%10
-		for i in i_list[0:-1]:
-			d2 = (p/(10**i_list[-1]))%10
-			if d2 != d:
-				flag = False
-				break		
-		if flag == True:
-			p = map(int,str(p))
-	 		for i in i_list:
-				d = p.pop(i-1)
+		p = list(str(p))
+		deleted = []
+		for i in i_list:
+			d = p.pop(i-1)
+			deleted.append(d)
+		if len(set(deleted)) == 1:
 			new_primes_list.append(p)
-
 	return new_primes_list
 
 def solution051():
-	prime_list = primes(100000)
+	prime_list = primes(1000000)
 	prime_numbers = []
 	for p in prime_list:
-		if (p != None) and (p > 10000):
+		if (p != None) and (p > 100000):
 			prime_numbers.append(p)
-	replace_list = replaceable_digits(5)
+	replace_list = replaceable_digits(6)
 	replace_list.sort(lambda x,y: cmp(len(x), len(y)))
 
 	for r in replace_list:
 		print r
 		new_p_list = new_primes(prime_numbers,r)
 		for n in new_p_list:
-			if new_p_list.count(n) >= 7:
+			if new_p_list.count(n) == 8:
 				return n,r
 
 print solution051()
 
 
-# def new_primes(prime_list,i_list):
-# 	new_primes_list = []
-# 	i_list.reverse()
-# 	for p in prime_list:
-# 		p = list(str(p))
-# 		deleted = []
-# 		for i in i_list:
-# 			d = p.pop(i-1)
-# 			deleted.append(d)
-# 		if len(set(deleted)) == 1:
-# 			new_primes_list.append(p)
-# 	return new_primes_list
